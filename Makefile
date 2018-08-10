@@ -16,3 +16,8 @@ main.o: main.c
 clean:
 	rm *.hex *.elf *.o
 	clear
+
+flash: main.hex
+	avrdude -c usbasp -p m8 -U flash:w:main.hex
+
+
